@@ -596,18 +596,7 @@ Resources:
                             print(ce.response['ResponseMetadata'])
                         except urllib.error.HTTPError as e:
                             print(e)
-                    elif the_event == 'Delete':
-                        try:
-                          pages = []
-                          paginator = s3.get_paginator('list_objects_v2')
-                          for page in paginator.paginate(Bucket=the_bucket):
-                            pages.extend(page['Contents'])
-                          for source in pages:
-                            print('deleting')                            
-                            s3.delete_object(Bucket=the_bucket,Key=source["Key"])
-                            print(source["Key"])
-                        except ClientError as ce:
-                            print(f"Failed to delete the files: {ce}")
+                    
 
                     # Everything OK... send the signal back
                     print("Completed.")
