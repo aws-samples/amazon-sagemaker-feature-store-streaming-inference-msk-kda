@@ -596,7 +596,7 @@ Resources:
                             print(ce.response['ResponseMetadata'])
                         except urllib.error.HTTPError as e:
                             print(e)
-                    
+
 
                     # Everything OK... send the signal back
                     print("Completed.")
@@ -810,6 +810,12 @@ Outputs:
   KDAStreamingApplicationS3BucketName:
     Value: !Ref KDAStreamingApplicationS3Bucket
     Description: Name of the S3 bucket that hosts the KDA App
+  AggregateFeatureStoreNameOutput:
+    Value: !Ref CreditCardAggregateFeatureStoreName
+    Description: The user entered value for CreditCardAggregateFeatureStoreName.
+  AggregateBatchFeatureStoreNameOutput:
+    Value: !Ref CreditCardAggregateBatchFeatureStoreName
+    Description: The user entered value for CreditCardAggregateBatchFeatureStoreName.
   LambdaRoleARN:
     Description: Role for Lambda execution.
     Value:
