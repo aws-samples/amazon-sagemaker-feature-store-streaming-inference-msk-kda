@@ -776,6 +776,8 @@ Resources:
       DefaultUserSettings:
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
         SecurityGroups: [!Ref SageMakerStudioSecurityGroup]
+        DefaultLandingUri: "app:JupyterServer:"
+        StudioWebPortal: "DISABLED"
       DomainName: "kda-msk-smfs-domain"
       SubnetIds: 
         - !Ref PrivateSubnetOne
